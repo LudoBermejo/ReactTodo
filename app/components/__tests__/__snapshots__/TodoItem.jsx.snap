@@ -1,7 +1,8 @@
 exports[`TodoItem renders properly 1`] = `
-<div>
+<li
+  id="list_item_1">
   1
   : 
   one
-</div>
+</li>
 `;

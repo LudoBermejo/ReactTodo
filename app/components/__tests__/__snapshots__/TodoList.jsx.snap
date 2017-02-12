@@ -4,16 +4,18 @@ exports[`TodoList renders properly 1`] = `
     List of items:
   </h1>
   <ul>
-    <div>
+    <li
+      id="list_item_1">
       1
       : 
       test_one
-    </div>
-    <div>
+    </li>
+    <li
+      id="list_item_2">
       2
       : 
       test_two
-    </div>
+    </li>
   </ul>
 </div>
 `;

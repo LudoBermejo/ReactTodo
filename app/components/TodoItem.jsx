@@ -5,9 +5,9 @@ export default class TodoItem extends React.Component {
   render() {
     const { id, value } = this.props;
     return (
-      <div>
+      <li id={"list_item_" + id}>
         {id}: {value}
-      </div>
+      </li>
     );
   }
 
