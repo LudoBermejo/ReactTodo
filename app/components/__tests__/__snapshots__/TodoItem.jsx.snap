@@ -1,0 +1,7 @@
+exports[`TodoItem renders properly 1`] = `
+<div>
+  1
+  : 
+  one
+</div>
+`;

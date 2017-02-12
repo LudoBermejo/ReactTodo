@@ -24,9 +24,11 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    modulesDirectories: ['./bower_components', 'node_modules'],
+    modulesDirectories: [
+      'node_modules',
+      './app/components'
+    ],
     alias: {
-      Main: 'app/components/Main.jsx',
       AppStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']

@@ -1,0 +1,34 @@
+exports[`Todo app renders properly 1`] = `
+<div>
+  <h1>
+    Todo
+  </h1>
+  <div>
+    <h1>
+      List of items:
+    </h1>
+    <ul>
+      <div>
+        1
+        : 
+        first
+      </div>
+      <div>
+        2
+        : 
+        Second
+      </div>
+      <div>
+        3
+        : 
+        Third
+      </div>
+      <div>
+        4
+        : 
+        Fourth
+      </div>
+    </ul>
+  </div>
+</div>
+`;
