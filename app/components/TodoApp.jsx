@@ -1,37 +1,61 @@
 import React from 'react';
 import TodoList from 'TodoList';
+import AddTodoItem from 'AddTodoItem';
+import TodosFilter from 'TodosFilter';
 
 export default class TodoApp extends React.Component {
   constructor(props) {
     super(props);
+
+    this.addTodoItem = this.addTodoItem.bind(this);
     this.state = {
       todoList: [
         {
           id: 1,
-          value: 'first'
+          value: 'first',
+          completed: false
         },
         {
           id: 2,
-          value: 'Second'
+          value: 'Second',
+          completed: false
         },
         {
           id: 3,
-          value: 'Third'
+          value: 'Third',
+          completed: false
         },
         {
           id: 4,
-          value: 'Fourth'
+          value: 'Fourth',
+          completed: false
         }
       ]
     };
   }
 
+  addTodoItem(value) {
+
+    const todoList = this.state.todoList;
+
+    todoList.push({
+      id: this.state.todoList.length + 1,
+      value,
+      completed: false
+    });
+
+    this.setState({
+      todoList
+    });
+  }
+
   render() {
-    const {todoList} = this.state;
+    const { todoList } = this.state;
     return (
       <div>
         <h1>Todo</h1>
-        <TodoList todoList={todoList}/>
+        <TodoList todoList={todoList} />
+        <AddTodoItem onAddItem={this.addTodoItem} />
       </div>
     );
   }

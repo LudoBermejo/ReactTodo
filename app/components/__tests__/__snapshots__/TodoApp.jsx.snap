@@ -8,27 +8,42 @@ exports[`Todo app renders properly 1`] = `
       List of items:
     </h1>
     <ul>
-      <div>
+      <li
+        id="list_item_1">
         1
         : 
         first
-      </div>
-      <div>
+      </li>
+      <li
+        id="list_item_2">
         2
         : 
         Second
-      </div>
-      <div>
+      </li>
+      <li
+        id="list_item_3">
         3
         : 
         Third
-      </div>
-      <div>
+      </li>
+      <li
+        id="list_item_4">
         4
         : 
         Fourth
-      </div>
+      </li>
     </ul>
   </div>
+  <form
+    className="form"
+    onSubmit={[Function]}>
+    <input
+      placeholder="What do you need to do?"
+      type="text" />
+    <button
+      className="button expanded">
+      Add todo
+    </button>
+  </form>
 </div>
 `;
