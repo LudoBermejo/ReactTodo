@@ -20,6 +20,10 @@ export default class TodoApp extends React.Component {
     };
   }
 
+  componentDidUpdate() {
+    TodoAPI.setTodos(this.state.todoList);
+  }
+
   search(value) {
     this.setState({ value });
   }

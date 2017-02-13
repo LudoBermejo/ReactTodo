@@ -51,5 +51,29 @@ describe('Todo app', () => {
     expect(todoApp.instance().state.todoList[0].completed === true);
 
   });
+
+  describe('should store data even if you refresh', () => {
+    const todoApp = shallow(<TodoApp />);
+    todoApp.instance().setState({
+      todoList: [
+      ]
+    });
+    expect(todoApp.instance().state.todoList.length).toBe(0);
+
+    todoApp.instance().setState({
+      todoList: [
+        {
+          id: uuid(),
+          value: 'Fourth',
+          completed: false
+        }
+      ]
+    });
+    expect(todoApp.instance().state.todoList.length).toBe(1);
+
+    const todoApp2 = shallow(<TodoApp />);
+    expect(todoApp2.instance().state.todoList.length).toBe(1);
+
+  });
 });
 

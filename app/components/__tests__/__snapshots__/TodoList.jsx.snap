@@ -6,7 +6,7 @@ exports[`TodoList renders properly 1`] = `
   <ul>
     <li
       className="todo-item"
-      id="list_item_bb2fb52f-b001-4d7f-adb9-6c51798c4792"
+      id="list_item_38fb942f-d936-4104-9baa-1b8013b1d7f2"
       onClick={[Function]}>
       <input
         checked={false}
@@ -15,7 +15,7 @@ exports[`TodoList renders properly 1`] = `
     </li>
     <li
       className="todo-item"
-      id="list_item_f79ddd3f-e529-4136-8146-a8139c6cae2f"
+      id="list_item_e5278d78-49f0-402e-83c1-9054b1c491df"
       onClick={[Function]}>
       <input
         checked={false}
