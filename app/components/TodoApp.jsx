@@ -8,6 +8,7 @@ export default class TodoApp extends React.Component {
     super(props);
 
     this.addTodoItem = this.addTodoItem.bind(this);
+    this.search = this.search.bind(this);
     this.state = {
       todoList: [
         {
@@ -34,6 +35,10 @@ export default class TodoApp extends React.Component {
     };
   }
 
+  search(value) {
+    console.log(value);
+  }
+
   addTodoItem(value) {
 
     const todoList = this.state.todoList;
@@ -54,6 +59,7 @@ export default class TodoApp extends React.Component {
     return (
       <div>
         <h1>Todo</h1>
+        <TodosFilter onSearch={this.search}  />
         <TodoList todoList={todoList} />
         <AddTodoItem onAddItem={this.addTodoItem} />
       </div>

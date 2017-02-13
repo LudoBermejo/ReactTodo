@@ -4,6 +4,19 @@ exports[`Todo app renders properly 1`] = `
     Todo
   </h1>
   <div>
+    <div>
+      <input
+        onChange={[Function]}
+        placeholder="Search in todos"
+        type="search" />
+    </div>
+    <label>
+      <input
+        onChange={[Function]}
+        type="checkbox" />
+    </label>
+  </div>
+  <div>
     <h1>
       List of items:
     </h1>

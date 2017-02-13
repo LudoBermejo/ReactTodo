@@ -1,26 +1,22 @@
 import React from 'react';
 import TodoItem from 'TodoItem';
 
-export default class TodoList extends React.Component {
+const TodoList = (props) => {
+  const renderList = listOfTodos => listOfTodos.map(item => <TodoItem key={item.id} {...item} />);
 
-  static get propTypes() {
-    todoList: React.PropTypes.array.isRequired;
-  }
+  const { todoList } = props;
+  return (
+    <div>
+      <h1>List of items:</h1>
+      <ul>
+        {renderList(todoList)}
+      </ul>
+    </div>
+  );
+};
 
-  renderList(listOfTodos) {
-    return listOfTodos.map(item => <TodoItem key={item.id} {...item} />);
-  }
+TodoList.propTypes = {
+  todoList: React.PropTypes.array.isRequired
+};
 
-  render() {
-    const { todoList } = this.props;
-    return (
-      <div>
-        <h1>List of items:</h1>
-        <ul>
-          {this.renderList(todoList)}
-        </ul>
-      </div>
-    );
-  }
-
-}
+export default TodoList;
