@@ -8,8 +8,15 @@ const TodoItem = (props) => {
     props.onChangeComplete(id);
   }
   return (
-    <li id={`list_item_${id}`} onClick={onChangeComplete}>
-      <input type="checkbox" checked={completed} style={{"pointer-events": "none"}} />
+    <li
+      id={`list_item_${id}`}
+      onClick={onChangeComplete}
+      className="todo-item"
+    >
+      <input
+        type="checkbox"
+        checked={completed}
+      />
       {value}
     </li>
   );
