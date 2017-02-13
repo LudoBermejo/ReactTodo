@@ -23,7 +23,7 @@ exports[`Todo app renders properly 1`] = `
     <ul>
       <li
         className="todo-item"
-        id="list_item_9abf4461-851e-46b5-b807-8dfcbac96a80"
+        id="list_item_4b4c9900-5e63-410e-ab8d-173a75566266"
         onClick={[Function]}>
         <input
           checked={false}

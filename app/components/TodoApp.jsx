@@ -25,12 +25,12 @@ export default class TodoApp extends React.Component {
   }
 
   search(value) {
-    this.setState({ value });
+    debugger;
+    this.setState({ ...value });
   }
 
   addTodoItem(value) {
     const todoList = this.state.todoList;
-
     this.setState({
       todoList: [
         ...todoList,
@@ -56,12 +56,13 @@ export default class TodoApp extends React.Component {
   }
 
   render() {
-    const { todoList } = this.state;
+    const { todoList, searchText, filterByComplete } = this.state;
+    const filteredTodo = TodoAPI.searchTodos(todoList, filterByComplete, searchText);
     return (
       <div>
         <h1>Todo</h1>
         <TodosFilter onSearch={this.search} />
-        <TodoList todoList={todoList} onChangeItemComplete={this.changeCompleteTodo} />
+        <TodoList todoList={filteredTodo} onChangeItemComplete={this.changeCompleteTodo} />
         <AddTodoItem onAddItem={this.addTodoItem} />
       </div>
     );
