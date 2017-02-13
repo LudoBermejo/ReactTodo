@@ -5,28 +5,20 @@ exports[`TodoList renders properly 1`] = `
   </h1>
   <ul>
     <li
-      id="list_item_d8d4a970-ca34-4127-882e-ddbccb1e65f9"
+      className="todo-item"
+      id="list_item_bb2fb52f-b001-4d7f-adb9-6c51798c4792"
       onClick={[Function]}>
       <input
         checked={false}
-        style={
-          Object {
-            "pointer-events": "none",
-          }
-        }
         type="checkbox" />
       test_one
     </li>
     <li
-      id="list_item_de6c33b1-46b0-43d9-8652-35e886e14a4e"
+      className="todo-item"
+      id="list_item_f79ddd3f-e529-4136-8146-a8139c6cae2f"
       onClick={[Function]}>
       <input
         checked={false}
-        style={
-          Object {
-            "pointer-events": "none",
-          }
-        }
         type="checkbox" />
       test_two
     </li>

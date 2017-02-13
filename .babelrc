@@ -5,6 +5,7 @@
       "root": ["./app/components"],
       "alias": {
         "AppStyles": "./app/styles/app.scss",
+        "TodoAPI": "./app/api/TodoAPI.jsx"
       }
     }]
   ]

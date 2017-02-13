@@ -20,40 +20,7 @@ exports[`Todo app renders properly 1`] = `
     <h1>
       List of items:
     </h1>
-    <ul>
-      <li
-        id="list_item_e8960427-2ae4-44c6-b1f2-361571f4b883"
-        onClick={[Function]}>
-        <input
-          checked={false}
-          type="checkbox" />
-        first
-      </li>
-      <li
-        id="list_item_a6b5973f-e16e-4fc8-85ae-1365635aa96f"
-        onClick={[Function]}>
-        <input
-          checked={false}
-          type="checkbox" />
-        Second
-      </li>
-      <li
-        id="list_item_17249fa1-b844-499b-8b3b-a781911f841b"
-        onClick={[Function]}>
-        <input
-          checked={false}
-          type="checkbox" />
-        Third
-      </li>
-      <li
-        id="list_item_01dbcb1b-d9f6-478c-bda2-092db73b3a80"
-        onClick={[Function]}>
-        <input
-          checked={false}
-          type="checkbox" />
-        Fourth
-      </li>
-    </ul>
+    <ul />
   </div>
   <form
     className="form"

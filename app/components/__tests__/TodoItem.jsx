@@ -17,7 +17,7 @@ describe('TodoItem', () => {
   });
 
   describe('Todo item show', () => {
-    const uuidUnique = uuid()
+    const uuidUnique = uuid();
     const staticValue = {
       id: uuidUnique,
       value: 'one',
@@ -26,6 +26,22 @@ describe('TodoItem', () => {
 
     const todoItem = shallow(<TodoItem {...staticValue} onChangeComplete={() => {}} />);
     expect(todoItem.find('li').length).toBe(1);
+  });
+
+  describe('Todo item change call prop function', () => {
+    const uuidUnique = uuid();
+    const staticValue = {
+      id: uuidUnique,
+      value: 'one',
+      completed: false
+    };
+
+    const mock = jest.fn();
+    const todoItem = mount(<TodoItem {...staticValue} onChangeComplete={mock} />);
+
+    todoItem.simulate('click');
+
+    expect(mock).toHaveBeenCalledWith(uuidUnique);
   });
 });
 

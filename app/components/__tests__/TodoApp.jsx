@@ -1,3 +1,4 @@
+import uuid from 'node-uuid';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow, mount } from 'enzyme';
@@ -16,6 +17,39 @@ describe('Todo app', () => {
     todoApp.instance().addTodoItem('demo');
     expect(todoApp.instance().state.todoList.length).toBe(numberOfItems + 1);
     expect(todoApp.instance().state.todoList[todoApp.instance().state.todoList.length-1].value).toBe('demo');
+  });
+
+  describe('Change completed item', () => {
+    const todoApp = shallow(<TodoApp />);
+    todoApp.instance().setState({
+      todoList: [
+        {
+          id: uuid(),
+          value: 'first',
+          completed: false
+        },
+        {
+          id: uuid(),
+          value: 'Second',
+          completed: false
+        },
+        {
+          id: uuid(),
+          value: 'Third',
+          completed: false
+        },
+        {
+          id: uuid(),
+          value: 'Fourth',
+          completed: false
+        }
+      ]
+    });
+
+    expect(todoApp.instance().state.todoList[0].completed === false);
+    todoApp.instance().changeCompleteTodo(todoApp.instance().state.todoList[0].id);
+    expect(todoApp.instance().state.todoList[0].completed === true);
+
   });
 });
 

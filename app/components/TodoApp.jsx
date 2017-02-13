@@ -1,8 +1,10 @@
+import uuid from 'node-uuid';
 import React from 'react';
+
 import TodoList from 'TodoList';
 import AddTodoItem from 'AddTodoItem';
 import TodosFilter from 'TodosFilter';
-import uuid from 'node-uuid';
+import TodoAPI from 'TodoAPI';
 
 export default class TodoApp extends React.Component {
   constructor(props) {
@@ -14,28 +16,7 @@ export default class TodoApp extends React.Component {
     this.state = {
       searchText: '',
       filterByComplete: false,
-      todoList: [
-        {
-          id: uuid(),
-          value: 'first',
-          completed: false
-        },
-        {
-          id: uuid(),
-          value: 'Second',
-          completed: false
-        },
-        {
-          id: uuid(),
-          value: 'Third',
-          completed: false
-        },
-        {
-          id: uuid(),
-          value: 'Fourth',
-          completed: false
-        }
-      ]
+      todoList: TodoAPI.getTodos()
     };
   }
 
