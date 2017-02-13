@@ -4,21 +4,24 @@ import { mount } from 'enzyme';
 import TodoList from 'TodoList';
 import TodoItem from 'TodoItem';
 import TestUtils from 'react-addons-test-utils';
+import uuid from 'node-uuid';
 
 describe('TodoList', () => {
   it('renders properly', () => {
     const values = [
       {
-        id: 1,
-        value: 'test_one'
+        id: uuid(),
+        value: 'test_one',
+        completed: false
       },
       {
-        id: 2,
-        value: 'test_two'
+        id: uuid(),
+        value: 'test_two',
+        completed: false
       }
     ];
 
-    const todoList = renderer.create(<TodoList todoList={values} />).toJSON();
+    const todoList = renderer.create(<TodoList todoList={values} onChangeItemComplete={() => {}} />).toJSON();
     expect(todoList).toMatchSnapshot();
   });
 
@@ -26,19 +29,21 @@ describe('TodoList', () => {
     it('renders all list of items', () => {
       const values = [
         {
-          id: 1,
-          value: 'test_one'
+          id: uuid(),
+          value: 'test_one',
+          completed: false
         },
         {
-          id: 2,
-          value: 'test_two'
+          id: uuid(),
+          value: 'test_two',
+          completed: false
         }
       ];
 
-      const todoList = mount(<TodoList todoList={values} />);
+      const todoList = mount(<TodoList todoList={values} onChangeItemComplete={() => {}} />);
       expect(todoList.find('li').length).toBe(2);
       expect(todoList.find(TodoItem).length).toBe(2);
-    })
+    });
   });
 });
 

@@ -1,8 +1,15 @@
 exports[`TodoItem renders properly 1`] = `
 <li
-  id="list_item_1">
-  1
-  : 
+  id="list_item_8b47697f-e2b9-4356-83f8-951caef2339d"
+  onClick={[Function]}>
+  <input
+    checked={false}
+    style={
+      Object {
+        "pointer-events": "none",
+      }
+    }
+    type="checkbox" />
   one
 </li>
 `;

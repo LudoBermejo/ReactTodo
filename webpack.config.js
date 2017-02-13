@@ -1,8 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 
-console.log(path.resolve(__dirname, './node_modules/foundation-sites/scss'));
-
 module.exports = {
   entry: [
     'script!jquery/dist/jquery.min.js',

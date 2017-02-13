@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from 'TodoItem';
 
 const TodoList = (props) => {
-  const renderList = listOfTodos => listOfTodos.map(item => <TodoItem key={item.id} {...item} />);
+  const renderList = listOfTodos => listOfTodos.map(item => <TodoItem key={item.id} {...item} onChangeComplete={props.onChangeItemComplete} />);
 
   const { todoList } = props;
   return (
@@ -16,7 +16,8 @@ const TodoList = (props) => {
 };
 
 TodoList.propTypes = {
-  todoList: React.PropTypes.array.isRequired
+  todoList: React.PropTypes.array.isRequired,
+  onChangeItemComplete: React.PropTypes.func.isRequired
 };
 
 export default TodoList;

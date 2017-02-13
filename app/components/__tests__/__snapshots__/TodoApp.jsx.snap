@@ -22,27 +22,35 @@ exports[`Todo app renders properly 1`] = `
     </h1>
     <ul>
       <li
-        id="list_item_393e520d-56e2-40a2-b875-0c99f0d69568">
-        393e520d-56e2-40a2-b875-0c99f0d69568
-        : 
+        id="list_item_e8960427-2ae4-44c6-b1f2-361571f4b883"
+        onClick={[Function]}>
+        <input
+          checked={false}
+          type="checkbox" />
         first
       </li>
       <li
-        id="list_item_4d088b79-c311-4d37-b3c5-8926f76bf3ef">
-        4d088b79-c311-4d37-b3c5-8926f76bf3ef
-        : 
+        id="list_item_a6b5973f-e16e-4fc8-85ae-1365635aa96f"
+        onClick={[Function]}>
+        <input
+          checked={false}
+          type="checkbox" />
         Second
       </li>
       <li
-        id="list_item_71bbb618-ebe4-4add-8a71-166040de1ca3">
-        71bbb618-ebe4-4add-8a71-166040de1ca3
-        : 
+        id="list_item_17249fa1-b844-499b-8b3b-a781911f841b"
+        onClick={[Function]}>
+        <input
+          checked={false}
+          type="checkbox" />
         Third
       </li>
       <li
-        id="list_item_5c9d20b4-82c9-4fd1-919f-83d274f9b764">
-        5c9d20b4-82c9-4fd1-919f-83d274f9b764
-        : 
+        id="list_item_01dbcb1b-d9f6-478c-bda2-092db73b3a80"
+        onClick={[Function]}>
+        <input
+          checked={false}
+          type="checkbox" />
         Fourth
       </li>
     </ul>
