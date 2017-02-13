@@ -2,6 +2,7 @@ import React from 'react';
 import TodoList from 'TodoList';
 import AddTodoItem from 'AddTodoItem';
 import TodosFilter from 'TodosFilter';
+import uuid from 'node-uuid';
 
 export default class TodoApp extends React.Component {
   constructor(props) {
@@ -10,24 +11,26 @@ export default class TodoApp extends React.Component {
     this.addTodoItem = this.addTodoItem.bind(this);
     this.search = this.search.bind(this);
     this.state = {
+      searchText: '',
+      filterByComplete: false,
       todoList: [
         {
-          id: 1,
+          id: uuid(),
           value: 'first',
           completed: false
         },
         {
-          id: 2,
+          id: uuid(),
           value: 'Second',
           completed: false
         },
         {
-          id: 3,
+          id: uuid(),
           value: 'Third',
           completed: false
         },
         {
-          id: 4,
+          id: uuid(),
           value: 'Fourth',
           completed: false
         }
@@ -36,21 +39,21 @@ export default class TodoApp extends React.Component {
   }
 
   search(value) {
-    console.log(value);
+    this.setState({ value });
   }
 
   addTodoItem(value) {
-
     const todoList = this.state.todoList;
 
-    todoList.push({
-      id: this.state.todoList.length + 1,
-      value,
-      completed: false
-    });
-
     this.setState({
-      todoList
+      todoList: [
+        ...todoList,
+        {
+          id: uuid(),
+          value,
+          completed: false
+        }
+      ]
     });
   }
 
@@ -59,7 +62,7 @@ export default class TodoApp extends React.Component {
     return (
       <div>
         <h1>Todo</h1>
-        <TodosFilter onSearch={this.search}  />
+        <TodosFilter onSearch={this.search} />
         <TodoList todoList={todoList} />
         <AddTodoItem onAddItem={this.addTodoItem} />
       </div>

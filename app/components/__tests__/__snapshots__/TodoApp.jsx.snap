@@ -22,26 +22,26 @@ exports[`Todo app renders properly 1`] = `
     </h1>
     <ul>
       <li
-        id="list_item_1">
-        1
+        id="list_item_393e520d-56e2-40a2-b875-0c99f0d69568">
+        393e520d-56e2-40a2-b875-0c99f0d69568
         : 
         first
       </li>
       <li
-        id="list_item_2">
-        2
+        id="list_item_4d088b79-c311-4d37-b3c5-8926f76bf3ef">
+        4d088b79-c311-4d37-b3c5-8926f76bf3ef
         : 
         Second
       </li>
       <li
-        id="list_item_3">
-        3
+        id="list_item_71bbb618-ebe4-4add-8a71-166040de1ca3">
+        71bbb618-ebe4-4add-8a71-166040de1ca3
         : 
         Third
       </li>
       <li
-        id="list_item_4">
-        4
+        id="list_item_5c9d20b4-82c9-4fd1-919f-83d274f9b764">
+        5c9d20b4-82c9-4fd1-919f-83d274f9b764
         : 
         Fourth
       </li>

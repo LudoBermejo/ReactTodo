@@ -10,7 +10,7 @@ const TodoItem = (props) => {
 };
 
 TodoItem.propTypes = {
-  id: React.PropTypes.number.isRequired,
+  id: React.PropTypes.string.isRequired,
   value: React.PropTypes.string.isRequired
 };
 

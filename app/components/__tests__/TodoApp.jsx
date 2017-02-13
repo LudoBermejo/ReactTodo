@@ -11,9 +11,11 @@ describe('Todo app', () => {
 
   describe('Add to do item', () => {
     const todoApp = shallow(<TodoApp />);
-    const numberOfItems = todoApp.instance().state.todoList.length;
+    const todoList = todoApp.instance().state.todoList;
+    const numberOfItems = todoList.length;
     todoApp.instance().addTodoItem('demo');
     expect(todoApp.instance().state.todoList.length).toBe(numberOfItems + 1);
+    expect(todoApp.instance().state.todoList[todoApp.instance().state.todoList.length-1].value).toBe('demo');
   });
 });
 

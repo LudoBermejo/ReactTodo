@@ -6,8 +6,8 @@ const TodosFilter = (props) => {
 
   const handleSearch = () => {
     const search = {
-      searchText: searchText.value,
-      filterByComplete: checkCompleted.value
+      searchText: searchText.value.toLowerCase(),
+      filterByComplete: checkCompleted.checked
     }
     props.onSearch(search);
   };
