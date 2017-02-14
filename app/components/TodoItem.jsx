@@ -3,10 +3,9 @@ import moment from 'moment';
 
 const TodoItem = (props) => {
   const { id, value, completed, createdAt, completedAt } = props;
-
+  const todoClassName = completed ? 'todo-item todo-completed' : 'todo-item';
   function renderCreatedAt(createdAt, completedAt) {
-
-    if(!completedAt) {
+    if (!completedAt) {
       return `Created ${moment.unix(createdAt).format('DD MM YYYY | HH:mm')}`;
     } else {
       return `Completed ${moment.unix(completedAt).format('DD MM YYYY | HH:mm')}`;
@@ -18,18 +17,23 @@ const TodoItem = (props) => {
     props.onChangeComplete(id);
   }
   return (
-    <li
+    <div
       id={`list_item_${id}`}
       onClick={onChangeComplete}
-      className="todo-item"
+      className={todoClassName}
     >
-      <input
-        type="checkbox"
-        checked={completed}
-      />
-      <p>{value}</p>
-      <p>{renderCreatedAt(createdAt, completedAt)}</p>
-    </li>
+      <div>
+        <input
+          type="checkbox"
+          checked={completed}
+        />
+      </div>
+      <div>
+        <p>{value}</p>
+        <p className="todo__subtext">{renderCreatedAt(createdAt, completedAt)}</p>
+      </div>
+
+    </div>
   );
 };
 

@@ -13,7 +13,7 @@ const TodosFilter = (props) => {
   };
 
   return (
-    <div>
+    <div className="container__header" >
       <div>
         <input
           type="search"
@@ -27,7 +27,7 @@ const TodosFilter = (props) => {
           type="checkbox"
           ref={input => checkCompleted = input}
           onChange={handleSearch}
-        />
+        /> Show completed todos
       </label>
     </div>
   );

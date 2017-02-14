@@ -1,37 +1,42 @@
 exports[`TodoList renders properly 1`] = `
 <div>
-  <h1>
-    List of items:
-  </h1>
-  <ul>
-    <li
-      className="todo-item"
-      id="list_item_9cf8dacb-d24e-4f5e-a68e-47dfe052b6d0"
-      onClick={[Function]}>
+  <div
+    className="todo-item"
+    id="list_item_aae1ad3a-c65f-4535-a89a-52032a3ebdb5"
+    onClick={[Function]}>
+    <div>
       <input
         checked={false}
         type="checkbox" />
+    </div>
+    <div>
       <p>
         test_one
       </p>
-      <p>
-        Created Invalid date
+      <p
+        className="todo__subtext">
+        Created 14 02 2017 | 13:14
       </p>
-    </li>
-    <li
-      className="todo-item"
-      id="list_item_f775feed-3d21-4078-b760-2d57d9a395bf"
-      onClick={[Function]}>
+    </div>
+  </div>
+  <div
+    className="todo-item"
+    id="list_item_50a0a219-c64d-4842-81fb-210afa02df46"
+    onClick={[Function]}>
+    <div>
       <input
         checked={false}
         type="checkbox" />
+    </div>
+    <div>
       <p>
         test_two
       </p>
-      <p>
-        Created Invalid date
+      <p
+        className="todo__subtext">
+        Created 14 02 2017 | 13:14
       </p>
-    </li>
-  </ul>
+    </div>
+  </div>
 </div>
 `;

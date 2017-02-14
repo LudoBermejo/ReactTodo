@@ -12,14 +12,16 @@ const AddTodoItem = (props) => {
   };
 
   return (
-    <form className="form" onSubmit={onSubmit}>
-      <input
-        type="text"
-        placeholder="What do you need to do?"
-        ref={(input) => { textInput = input; }}
-      />
-      <button className="button expanded">Add todo</button>
-    </form>
+    <div className="container__footer" >
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          placeholder="What do you need to do?"
+          ref={(input) => { textInput = input; }}
+        />
+        <button className="button expanded">Add todo</button>
+      </form>
+    </div>
   );
 };
 
