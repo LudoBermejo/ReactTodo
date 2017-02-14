@@ -6,8 +6,16 @@ const TodoAPI = {
   },
   getTodos: () => JSON.parse(window.localStorage.getItem('todos') || '[]'),
   searchTodos: (todos, showCompleted, searchText) => {
-    return todos.filter(item => ( (searchText && item.value.includes(searchText)) || (!searchText))
-          && ((!showCompleted && !item.completed) || (showCompleted)));
+    const filteredArray = todos.filter(
+      item => ((searchText && item.value.toLowerCase().includes(searchText)) || (!searchText))
+          && ((!showCompleted && !item.completed) || (showCompleted))
+    );
+
+    return filteredArray.sort((a, b) => {
+      if(!a.completed) return -1;
+      if(!b.completed) return 1;
+      return 0;
+    })
   }
 };
 

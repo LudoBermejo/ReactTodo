@@ -25,7 +25,6 @@ export default class TodoApp extends React.Component {
   }
 
   search(value) {
-    debugger;
     this.setState({ ...value });
   }
 

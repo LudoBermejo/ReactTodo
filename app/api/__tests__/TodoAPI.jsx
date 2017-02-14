@@ -48,8 +48,7 @@ describe('TodoAPI', () => {
   });
 
   it('should return valid data if you put a array ', () => {
-
-    window.localStorage.setItem('todos', JSON.stringify(['demo', 'demo2']) );
+    window.localStorage.setItem('todos', JSON.stringify(['demo', 'demo2']));
     expect(TodoAPI.getTodos()).toEqual(['demo', 'demo2']);
 
     const complexArray = [
@@ -78,6 +77,58 @@ describe('TodoAPI', () => {
     window.localStorage.setItem('todos', JSON.stringify(complexArray));
 
     expect(TodoAPI.getTodos()).toEqual(complexArray);
+  });
+
+  describe('filter todo items', () => {
+    const complexArray = [
+      {
+        id: uuid(),
+        value: 'first',
+        completed: false
+      },
+      {
+        id: uuid(),
+        value: 'Second',
+        completed: false
+      },
+      {
+        id: uuid(),
+        value: 'Completed',
+        completed: true
+      },
+      {
+        id: uuid(),
+        value: 'Fourth',
+        completed: false
+      }
+    ];
+
+    it('should show only uncompleted todos if not filter is applied', () => {
+      const filteredArray = TodoAPI.searchTodos(complexArray, false, '');
+      expect(filteredArray.length).toBe(3);
+    });
+
+    it('should show all todos if show completed is applied', () => {
+      const filteredArray = TodoAPI.searchTodos(complexArray, true, '');
+      expect(filteredArray.length).toBe(4);
+    });
+
+    it('should show filtered, uncompleted todos if search text is applied', () => {
+      const filteredArray = TodoAPI.searchTodos(complexArray, false, 't');
+      expect(filteredArray.length).toBe(2);
+    });
+
+    it('should show filtered, completed todos if search text and show completed is applied', () => {
+      const filteredArray = TodoAPI.searchTodos(complexArray, true, 't');
+      expect(filteredArray.length).toBe(3);
+    });
+
+    it('should order array based on not completed first', () => {
+      const filteredArray = TodoAPI.searchTodos(complexArray, true, '');
+      expect(filteredArray.length).toBe(4);
+      expect(filteredArray[3].value).toBe('Completed');
+      expect(filteredArray[3].completed).toBeTruthy();
+    });
   });
 });
 

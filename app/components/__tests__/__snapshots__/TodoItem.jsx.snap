@@ -1,7 +1,7 @@
 exports[`TodoItem renders properly 1`] = `
 <li
   className="todo-item"
-  id="list_item_f6cd808b-ae79-4c7e-8679-6950a7d259e0"
+  id="list_item_3ed78364-62ad-4f64-882e-ea5e5e575447"
   onClick={[Function]}>
   <input
     checked={false}

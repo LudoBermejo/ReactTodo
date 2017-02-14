@@ -10,7 +10,7 @@ describe('Todo app', () => {
     expect(todoApp).toMatchSnapshot();
   });
 
-  describe('Add to do item', () => {
+  it('should add to do item', () => {
     const todoApp = shallow(<TodoApp />);
     const todoList = todoApp.instance().state.todoList;
     const numberOfItems = todoList.length;
@@ -19,7 +19,7 @@ describe('Todo app', () => {
     expect(todoApp.instance().state.todoList[todoApp.instance().state.todoList.length-1].value).toBe('demo');
   });
 
-  describe('Change completed item', () => {
+  it('should change completed item', () => {
     const todoApp = shallow(<TodoApp />);
     todoApp.instance().setState({
       todoList: [
@@ -52,7 +52,7 @@ describe('Todo app', () => {
 
   });
 
-  describe('should store data even if you refresh', () => {
+  it('should store data even if you refresh', () => {
     const todoApp = shallow(<TodoApp />);
     todoApp.instance().setState({
       todoList: [
@@ -75,5 +75,8 @@ describe('Todo app', () => {
     expect(todoApp2.instance().state.todoList.length).toBe(1);
 
   });
+
+
+
 });
 
