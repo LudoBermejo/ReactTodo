@@ -1,5 +1,6 @@
 import uuid from 'node-uuid';
 import React from 'react';
+import moment from 'moment';
 
 import TodoList from 'TodoList';
 import AddTodoItem from 'AddTodoItem';
@@ -36,7 +37,8 @@ export default class TodoApp extends React.Component {
         {
           id: uuid(),
           value,
-          completed: false
+          completed: false,
+          createdAt: moment().unix()
         }
       ]
     });
@@ -48,6 +50,7 @@ export default class TodoApp extends React.Component {
         const todo = item;
         if (todo.id === id) {
           todo.completed = !item.completed;
+          todo.completedAt = todo.completed ? moment().unix() : undefined;
         }
         return todo;
       })

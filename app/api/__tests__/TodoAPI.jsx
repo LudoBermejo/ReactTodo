@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoAPI from 'TodoAPI';
 import uuid from 'node-uuid';
+import moment from 'moment';
 
 describe('TodoAPI', () => {
   it('should gets emmpty array at first', () => {
@@ -23,21 +24,25 @@ describe('TodoAPI', () => {
       {
         id: uuid(),
         value: 'first',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Second',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Third',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Fourth',
+        createdAt: moment().unix(),
         completed: false
       }
     ];
@@ -55,21 +60,25 @@ describe('TodoAPI', () => {
       {
         id: uuid(),
         value: 'first',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Second',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Third',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Fourth',
+        createdAt: moment().unix(),
         completed: false
       }
     ];
@@ -84,21 +93,26 @@ describe('TodoAPI', () => {
       {
         id: uuid(),
         value: 'first',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Second',
+        createdAt: moment().unix(),
         completed: false
       },
       {
         id: uuid(),
         value: 'Completed',
+        createdAt: moment().unix(),
+        completedAt: moment().unix(),
         completed: true
       },
       {
         id: uuid(),
         value: 'Fourth',
+        createdAt: moment().unix(),
         completed: false
       }
     ];
@@ -121,6 +135,13 @@ describe('TodoAPI', () => {
     it('should show filtered, completed todos if search text and show completed is applied', () => {
       const filteredArray = TodoAPI.searchTodos(complexArray, true, 't');
       expect(filteredArray.length).toBe(3);
+    });
+
+    it('should order array based on not completed first', () => {
+      const filteredArray = TodoAPI.searchTodos(complexArray, true, '');
+      expect(filteredArray.length).toBe(4);
+      expect(filteredArray[3].value).toBe('Completed');
+      expect(filteredArray[3].completed).toBeTruthy();
     });
 
     it('should order array based on not completed first', () => {

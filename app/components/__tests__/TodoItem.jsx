@@ -1,5 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import moment from 'moment';
+
 import { shallow, mount } from 'enzyme';
 import TodoItem from 'TodoItem';
 import uuid from 'node-uuid';
@@ -9,6 +11,7 @@ describe('TodoItem', () => {
     const staticValue = {
       id: uuid(),
       value: 'one',
+      createdAt: moment().unix(),
       completed: false
     };
 
@@ -21,6 +24,7 @@ describe('TodoItem', () => {
     const staticValue = {
       id: uuidUnique,
       value: 'one',
+      createdAt: moment().unix(),
       completed: false
     };
 
@@ -33,6 +37,7 @@ describe('TodoItem', () => {
     const staticValue = {
       id: uuidUnique,
       value: 'one',
+      createdAt: moment().unix(),
       completed: false
     };
 
